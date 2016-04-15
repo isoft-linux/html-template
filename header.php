@@ -35,6 +35,7 @@ echo '
       <li><a href="https://forum.isoft-linux.org" ' . current_page_cb(isset($_GET['p']) ? $_GET['p'] == 'forum' : false) . '>论坛</a></li>
     </ul>
   </div>
+  <base target="_parent" />
 </body>
 </html>
 ';

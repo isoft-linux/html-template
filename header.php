@@ -6,7 +6,7 @@ echo '
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>普华开源社区</title>
   <style>
-    body { margin: 0; }
+    body { margin: 0; background-color: #ffffff; }
 
     div#isoft-header { width: 900px; margin: 0 auto; }
     div#isoft-header div#contact { float: right; color: #9a9a9a; font-size: 9px; padding: 48px 15px 0 0; }

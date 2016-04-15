@@ -1,8 +1,10 @@
-<!-- Copyright (C) 2016 Leslie Zhai <xiang.zhai@i-soft.com.cn> -->
+<?php
+
+echo '
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>导航栏</title>
+  <title>普华开源社区</title>
   <style>
     body { margin: 0; }
 
@@ -28,11 +30,22 @@
   </div>
   <div id="isoft-navbar">
     <ul>
-      <li><a href="#">首页</a></li>
-      <li><a href="#">缺陷管理</a></li>
-      <li><a href="#">论坛</a></li>
-      <li><a href="#">关于我们</a></li>
+      <li><a href="https://isoft-linux.org" ' . current_page_cb(isset($_GET['p']) ? $_GET['p'] == 'index' : true) . '>首页</a></li>
+      <li><a href="https://bugs.isoft-linux.org" ' . current_page_cb(isset($_GET['p']) ? $_GET['p'] == 'bug' : false) . '>缺陷管理</a></li>
+      <li><a href="https://forum.isoft-linux.org" ' . current_page_cb(isset($_GET['p']) ? $_GET['p'] == 'forum' : false) . '>论坛</a></li>
     </ul>
   </div>
 </body>
 </html>
+';
+
+function current_page_cb($is_current_page) 
+{
+    if ($is_current_page) {
+        return 'style="background-color: #f2472d;"';
+    } else {
+        return '';
+    }
+}
+
+?>

@@ -14,9 +14,9 @@ echo '
 
     div#isoft-navbar { width: 100%; background: url("./images/navbar-bg.png") repeat-x; }
     div#isoft-navbar ul { margin: 0; padding: 0; text-align: center; }
-    div#isoft-navbar ul li { display: inline; list-style: none; }
+    div#isoft-navbar ul li { display: inline; list-style: none; background: url("./images/navbar-token.png") no-repeat; }
     div#isoft-navbar ul li a:link,a:visited { display: inline-block; margin-right: -4px; width: 132px; font-size: 12px; font-weight: bold; color: #ffffff; background-color: url("./images/navbar-bg.png") repeat-x; text-align:center; padding: 11px; text-decoration: none; text-transform: uppercase; }
-    div#isoft-navbar ul li a:hover,a:active { background-color: #f2472d; }
+    div#isoft-navbar ul li a:hover,a:active { background: url("./images/navbar-bg-hover.png") repeat-x; }
   </style>
 </head>
 
@@ -33,6 +33,7 @@ echo '
       <li><a href="https://isoft-linux.org" ' . current_page_cb(isset($_GET['p']) ? $_GET['p'] == 'index' : true) . '>首页</a></li>
       <li><a href="https://bugs.isoft-linux.org" ' . current_page_cb(isset($_GET['p']) ? $_GET['p'] == 'bug' : false) . '>缺陷管理</a></li>
       <li><a href="https://forum.isoft-linux.org" ' . current_page_cb(isset($_GET['p']) ? $_GET['p'] == 'forum' : false) . '>论坛</a></li>
+      <li>&nbsp</li>
     </ul>
   </div>
   <base target="_parent" />

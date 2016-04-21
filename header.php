@@ -9,6 +9,8 @@ echo '
     body { margin: 0; background-color: #ffffff; }
 
     div#isoft-header { width: 900px; margin: 0 auto; }
+    div#isoft-header a { color: #9a9a9a; text-decoration: none; }
+    div#isoft-header img#logo { padding: 20px 0 20px 0; }
     div#isoft-header div#contact { float: right; color: #9a9a9a; font-size: 9px; padding: 48px 15px 0 0; }
     div#isoft-header div#contact img { vertical-align: text-top; padding: 0 5px 0 53px; }
 
@@ -18,33 +20,18 @@ echo '
     div#isoft-navbar ul.topnav li a:link,a:visited { display: inline-block; margin-right: -4px; width: 132px; font-size: 12px; font-weight: bold; color: #ffffff; background-color: url("./images/navbar-bg.png") repeat-x; text-align:center; padding: 11px; text-decoration: none; text-transform: uppercase; }
     div#isoft-navbar ul.topnav li a:hover,a:active { background: url("./images/navbar-bg-hover.png") repeat-x; }
 
-    div#isoft-navbar ul.topnav li.icon { display: none; }
     @media screen and (max-width:680px) {
-      div#isoft-navbar ul.topnav li { background: none; }
-      div#isoft-navbar ul.topnav li:not(:first-child) { display: none; }
-      div#isoft-navbar ul.topnav li.icon { float: right; display: inline-block; }
-    }
-    @media screen and (max-width:680px) {
-      div#isoft-navbar ul.topnav.responsive { position: relative; }
-      div#isoft-navbar ul.topnav.responsive li.icon { position: absolute; right: 0; top: 0; }
-      div#isoft-navbar ul.topnav.responsive li { float: none; display: inline; }
-      div#isoft-navbar ul.topnav.responsive li a:link,a:visited { display: block; background: url("./images/navbar-bg.png") repeat-x; }
-      div#isoft-navbar ul.topnav.responsive li a:hover,a:active { background: url("./images/navbar-bg-hover.png") repeat-x; }
+      div#isoft-navbar ul.topnav li a:link,a:visited { width: 100px; }
     }
   </style>
-  <script>
-    function toggle() {
-      document.getElementsByClassName("topnav")[0].classList.toggle("responsive");
-    }
-  </script>
 </head>
 
 <body>
   <div id="isoft-header">
-    <img src="./images/isoft-logo.svg" alt="logo">
+    <img id="logo" src="./images/logo.png" height="87" alt="logo">
     <div id="contact">
       <img src="./images/tel.png" alt="Tel.">(010)-8406-5566
-      <img src="./images/mail.png" alt="email">xiang.zhai@i-soft.com.cn
+      <a href="mailto:xiang.zhai@i-soft.com.cn?Subject=Hello%20world" target="_top"><img src="./images/mail.png" alt="email">xiang.zhai@i-soft.com.cn</a>
     </div>
   </div>
   <div id="isoft-navbar">
@@ -52,9 +39,6 @@ echo '
       <li><a href="https://isoft-linux.org" ' . current_page_cb(isset($_GET['p']) ? $_GET['p'] == 'index' : true) . '>首页</a></li>
       <li><a href="https://bugs.isoft-linux.org" ' . current_page_cb(isset($_GET['p']) ? $_GET['p'] == 'bug' : false) . '>缺陷管理</a></li>
       <li><a href="https://forum.isoft-linux.org" ' . current_page_cb(isset($_GET['p']) ? $_GET['p'] == 'forum' : false) . '>论坛</a></li>
-      <li class="icon">
-        <a href="javascript:void(0);" onclick="toggle()">&#9776;</a>
-      </li>
       <li>&nbsp</li>
     </ul>
   </div>

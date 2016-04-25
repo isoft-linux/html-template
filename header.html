@@ -6,20 +6,14 @@
   <style>
     body { margin: 0; background-color: #ffffff; }
 
-    div#isoft-header { width: 900px; margin: 0 auto; }
-    div#isoft-header a { color: #9a9a9a; text-decoration: none; }
-    div#isoft-header img#logo { padding: 20px 0 20px 0; }
-    div#isoft-header div#contact { float: right; color: #9a9a9a; font-size: 9px; padding: 48px 15px 0 0; }
-    div#isoft-header div#contact img { vertical-align: text-top; padding: 0 5px 0 53px; }
-
-    div#isoft-navbar { width: 100%; background: url("./images/navbar-bg.png") repeat-x; }
+    img#logo { z-index: 101; position: absolute; top: 20px; left: 40px; }
+    div#isoft-navbar { position: absolute; top: 73px; width: 100%; background: url("./images/navbar-bg.png") repeat-x; }
     div#isoft-navbar ul.topnav { margin: 0; padding: 0; text-align: center; }
     div#isoft-navbar ul.topnav li { display: inline; list-style: none; background: url("./images/navbar-token.png") no-repeat; }
     div#isoft-navbar ul.topnav li a:link,a:visited { display: inline-block; margin-right: -4px; width: 132px; font-size: 12px; font-weight: bold; color: #ffffff; background-color: url("./images/navbar-bg.png") repeat-x; text-align:center; padding: 11px 0px 11px 0px; text-decoration: none; text-transform: uppercase; }
     div#isoft-navbar ul.topnav li a:hover,a:active { background: url("./images/navbar-bg-hover.png") repeat-x; }
 
 	@media screen and (max-width:680px) {
-      div#isoft-header { width: 200px; }
       div#isoft-navbar ul.topnav { text-align: left; }
       div#isoft-navbar ul.topnav li a:link,a:visited { width: 100px; }
     }
@@ -27,13 +21,7 @@
 </head>
 
 <body>
-  <div id="isoft-header">
-    <img id="logo" src="./images/logo.png" height="87" alt="logo">
-    <div id="contact">
-      <img src="./images/tel.png" alt="Tel.">(010)-8406-5566
-      <a href="mailto:xiang.zhai@i-soft.com.cn?Subject=Hello%20world" target="_top"><img src="./images/mail.png" alt="email">xiang.zhai@i-soft.com.cn</a>
-    </div>
-  </div>
+  <img id="logo" src="./images/logo.png" height="87" alt="logo">
   <div id="isoft-navbar">
     <ul class="topnav">
       <li><a href="#">首页</a></li>

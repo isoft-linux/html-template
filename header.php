@@ -8,7 +8,7 @@ echo '
   <style>
     body { margin: 0; background-color: #ffffff; }
 
-    img#logo { z-index: 101; position: absolute; top: 20px; left: 40px; }
+    img#logo { z-index: 101; position: absolute; top: 20px; left: 15%; }
 
     div#isoft-navbar { position: absolute; top: 73px; width: 100%; background: url("./images/navbar-bg.png") repeat-x; }
     div#isoft-navbar ul.topnav { margin: 0; padding: 0; text-align: center; }

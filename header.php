@@ -8,9 +8,9 @@ echo '
   <style>
     body { margin: 0; background-color: #ffffff; }
 
-    img#logo { z-index: 101; position: absolute; top: 20px; left: 15%; }
+    img#logo { z-index: 101; position: absolute; top: 10px; }
 
-    div#isoft-navbar { position: absolute; top: 73px; width: 100%; background: url("./images/navbar-bg.png") repeat-x; }
+    div#isoft-navbar { position: absolute; top: 85px; width: 100%; background: url("./images/navbar-bg.png") repeat-x; }
     div#isoft-navbar ul.topnav { margin: 0; padding: 0; text-align: center; }
     div#isoft-navbar ul.topnav li { display: inline; list-style: none; background: url("./images/navbar-token.png") no-repeat; }
     div#isoft-navbar ul.topnav li a:link,a:visited { display: inline-block; margin-right: -4px; width: 132px; font-size: 12px; font-weight: bold; color: #ffffff; background-color: url("./images/navbar-bg.png") repeat-x; text-align:center; padding: 11px; text-decoration: none; text-transform: uppercase; }
@@ -21,10 +21,17 @@ echo '
       div#isoft-navbar ul.topnav li a:link,a:visited { width: 80px; }
     }
   </style>
+  <script>
+    function resizeCb() 
+    {
+        var logo = document.getElementById("logo");
+        logo.style.left = (document.body.clientWidth - 5 * 132) / 2 - logo.clientWidth * 2;
+    }
+  </script>
 </head>
 
-<body>
-  <img id="logo" src="./images/logo.png" height="87" alt="logo">
+<body onload="resizeCb()" onresize="resizeCb()">
+  <img id="logo" src="./images/logo.png" alt="logo">
   <div id="isoft-navbar">
     <ul class="topnav">
       <li><a href="https://isoft-linux.org" ' . current_page_cb(isset($_GET['p']) ? $_GET['p'] == 'index' : true) . '>首页</a></li>

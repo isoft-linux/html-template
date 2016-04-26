@@ -25,7 +25,11 @@ echo '
     function resizeCb() 
     {
         var logo = document.getElementById("logo");
-        logo.style.left = (document.body.clientWidth - 3 * 132) / 2 - logo.clientWidth * 2 - 20;
+        if (document.body.clientWidth < 680) {
+            logo.style.left = 10;
+        } else {
+            logo.style.left = (document.body.clientWidth - 3 * 132) / 2 - logo.clientWidth * 2 - 20;
+        }
     }
   </script>
 </head>

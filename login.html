@@ -7,16 +7,15 @@
     body { margin: 0; }
 
     div#login { margin: 0 auto; width: 900px; padding-top: 35px; }
-    div#login h1 { font-size: 18px; padding: 0 0 20px 28px; border-bottom: 1px dotted #cecdcd; }
+    div#login h1 { font-size: 18px; margin-bottom: 40px; padding: 0 0 20px 28px; border-bottom: 1px dotted #cecdcd; }
     div#login td { height: 50px; }
     div#login td.label { font-size: 8px; color: black; text-align: right; padding-right: 8px; }
-    div#login input[type=text], input[type=password] { padding: 8px; display:block; border:none; border-bottom: 1px solid #808080; width: 232px; height: 40px; }
-	div#login .border-0 { border: 0!important } .border { border: 1px solid #ccc!important } .border-top { border-top: 1px solid #ccc!important } .border-bottom { border-bottom: 1px solid #ccc!important } .border-left { border-left: 1px solid #ccc!important } .border-right { border-right: 1px solid #ccc!important }
-    div#login .round { border-radius: 4px!important }
-    div#login input[type=submit] { background-color: #f24d34; color: white; padding: 9px 30px; width: 92px; border: 1px solid #f24d34!important; border-radius: 4px!important; }
+    div#login input[type=text], input[type=password] { padding: 8px; display:block; outline: none; border: 1px solid #ccc!important; border-radius: 4px!important; width: 232px; height: 40px; }
+    div#login input[type=submit] { background-color: #f24d34; color: white; padding: 9px 30px; width: 92px; outline: none; border: 1px solid #f24d34!important; border-radius: 4px!important; }
     div#login a { font-size: 8px; text-decoration: none; margin-left: 18px; }
     div#db { float: left; }
     div#oauth { float: right; }
+    div#oauth a { display: block; padding: 6px; }
     div#login h2 { font-size: 12px; }
   </style>
 </head>
@@ -30,11 +29,11 @@
       <table>
         <tr>
           <td class="label">用户名:</td>
-          <td><input class="border round" type="text" name="username" placeholder="用户名/邮箱"></td> 
+          <td><input type="text" name="username" placeholder="用户名/邮箱"></td> 
         </tr>
         <tr>
           <td class="label">密码:</td>
-          <td><input class="border round" type="password" name="password" placeholder="密码"></td> 
+          <td><input type="password" name="password" placeholder="密码"></td> 
         </tr>
         <tr>
           <td>&nbsp;</td>
@@ -45,6 +44,9 @@
     </div>
     <div id="oauth">
       <h2>第三方登录</h2>
+      <a href="#" alt="GitHub"><img src="./images/github.png" height="40" alt="GitHub" /></a>
+      <a href="#" alt="QQ"><img src="./images/qq.png" height="40" alt="QQ" /></a>
+      <a href="#" alt="Weibo"><img src="./images/weibo.png" height="40" alt="Weibo" /></a>
     </div>
   </div>
 </body>

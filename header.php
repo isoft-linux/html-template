@@ -35,7 +35,7 @@ echo '
 </head>
 
 <body onload="resizeCb()" onresize="resizeCb()">
-  <img id="logo" src="./images/logo.png" alt="logo">
+  <a href="https://isoft-linux.org"><img id="logo" src="./images/logo.png" alt="logo"></a>
   <div id="isoft-navbar">
     <ul class="topnav">
       <li><a href="https://isoft-linux.org" ' . current_page_cb(isset($_GET['p']) ? $_GET['p'] == 'index' : true) . '>首页</a></li>

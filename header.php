@@ -17,7 +17,8 @@ echo '
     div#isoft-navbar ul.topnav li a:hover,a:active { background: url("./images/navbar-bg-hover.png") repeat-x; }
 
     @media screen and (max-width:680px) {
-      div#isoft-navbar ul.topnav { text-align: left; }
+      div#isoft-navbar ul.topnav { margin-left: 80px; text-align: left; }
+      div#isoft-navbar ul.topnav li:first-child { display: none; }
       div#isoft-navbar ul.topnav li a:link,a:visited { width: 80px; }
     }
   </style>

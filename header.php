@@ -23,6 +23,14 @@ echo '
     }
   </style>
   <script>
+    function inIframe() {
+        try {
+            return window.self !== window.top;
+        } catch (e) {
+            return true;
+        }
+	}
+
     function resizeCb() 
     {
         var logo = document.getElementById("logo");
@@ -30,6 +38,10 @@ echo '
             logo.style.left = 10;
         } else {
             logo.style.left = (document.body.clientWidth - 3 * 132) / 2 - logo.clientWidth * 2 - 20;
+        }
+
+        if (!inIframe()) {
+            window.location.href = "https://isoft-linux.org";
         }
     }
   </script>

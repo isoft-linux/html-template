@@ -52,7 +52,7 @@ echo '
   <div id="isoft-navbar">
     <ul class="topnav">
       <li><a href="https://isoft-linux.org" ' . current_page_cb(isset($_GET['p']) ? $_GET['p'] == 'index' : true) . '>首页</a></li>
-      <li><a href="https://bugs.isoft-linux.org" ' . current_page_cb(isset($_GET['p']) ? $_GET['p'] == 'bug' : false) . '>缺陷管理</a></li>
+      <li><a href="https://bugs.isoft-linux.org" ' . current_page_cb(isset($_GET['p']) ? $_GET['p'] == 'bug' : false) . '>问题跟踪</a></li>
       <li><a href="https://forum.isoft-linux.org" ' . current_page_cb(isset($_GET['p']) ? $_GET['p'] == 'forum' : false) . '>论坛</a></li>
       <!--<li><a href="#">维基百科</a></li>-->
       <!--<li><a href="https://isoft-linux.org/index.php/projects/">项目列表</a></li>-->

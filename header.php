@@ -1,6 +1,23 @@
 <?php
 
-echo '
+@define('ISOFT_HEADER', 'isoft-header');
+
+$redis = new Redis();
+if (!$redis->connect('localhost', 6379)) {
+    die('Could not connect to redis server');
+}
+$redis->setOption(Redis::OPT_SERIALIZER, Redis::SERIALIZER_PHP);
+$redis->setOption(Redis::OPT_PREFIX, ISOFT_HEADER);
+
+$po = array(
+    'zh' => array(
+        'Home' => '首页',
+        'Bug Report' => '问题跟踪',
+        'Forum' => '论坛',
+    ),
+);
+
+$html = '
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -23,13 +40,14 @@ echo '
     }
   </style>
   <script>
-    function inIframe() {
+    function inIframe()
+    {
         try {
             return window.self !== window.top;
         } catch (e) {
             return true;
         }
-	}
+    }
 
     function resizeCb() 
     {
@@ -51,9 +69,9 @@ echo '
   <a href="https://isoft-linux.org"><img id="logo" src="./images/logo.png" alt="logo"></a>
   <div id="isoft-navbar">
     <ul class="topnav">
-      <li><a href="https://isoft-linux.org" ' . current_page_cb(isset($_GET['p']) ? $_GET['p'] == 'index' : true) . '>首页</a></li>
-      <li><a href="https://bugs.isoft-linux.org" ' . current_page_cb(isset($_GET['p']) ? $_GET['p'] == 'bug' : false) . '>问题跟踪</a></li>
-      <li><a href="https://forum.isoft-linux.org" ' . current_page_cb(isset($_GET['p']) ? $_GET['p'] == 'forum' : false) . '>论坛</a></li>
+      <li><a href="https://isoft-linux.org" ' . current_page_cb(isset($_GET['p']) ? $_GET['p'] == 'index' : true) . '>' . i18n('Home', $po) . '</a></li>
+      <li><a href="https://bugs.isoft-linux.org" ' . current_page_cb(isset($_GET['p']) ? $_GET['p'] == 'bug' : false) . '>' . i18n('Bug Report', $po) . '</a></li>
+      <li><a href="https://forum.isoft-linux.org" ' . current_page_cb(isset($_GET['p']) ? $_GET['p'] == 'forum' : false) . '>' . i18n('Forum', $po) . '</a></li>
       <!--<li><a href="#">维基百科</a></li>-->
       <!--<li><a href="https://isoft-linux.org/index.php/projects/">项目列表</a></li>-->
       <!--<li><a href="https://isoft-linux.org/index.php/aboutus/">关于我们</a></li>-->
@@ -65,7 +83,7 @@ echo '
 </html>
 ';
 
-function current_page_cb($is_current_page) 
+function current_page_cb($is_current_page)
 {
     if ($is_current_page) {
         return 'style="background-color: #f2472d;"';
@@ -73,5 +91,21 @@ function current_page_cb($is_current_page)
         return '';
     }
 }
+
+function i18n($msgid, $po)
+{
+    $l = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+    if (array_key_exists($l, $po)) {
+        return $po[$l][$msgid];
+    }
+    return $msgid;
+}
+
+if (empty($redis->get(ISOFT_HEADER))) {
+    $redis->setex(ISOFT_HEADER, 2592000, $html);
+}
+echo $redis->get(ISOFT_HEADER);
+$redis->flushDB();
+$redis->close();
 
 ?>
